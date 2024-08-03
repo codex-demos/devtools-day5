@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then((data) => {
       const profileContainer = document.getElementById('profileContainer');
-      // Problem 9:
       for (const key in data) {
         let para = document.createElement('p');
         para.innerText = `${key}: ${data[key]}`;
@@ -18,12 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch((error) => console.error('Failed to load user data:', error));
 
-  // Problem 10:
   let sum = 0;
   for (let i = 0; i < 100000; i++) {
     sum += i;
+    // Problem 10 (Consider problem 3):
+    $('body output').append(`<p>The sum is: ${sum}</p>`);
   }
 
-  // Problem 11 (Consider problem 3):
-  $('body').append(`<p>The sum is: ${sum}</p>`);
+
 });
